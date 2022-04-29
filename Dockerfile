@@ -1,6 +1,6 @@
 FROM alpine:3.14
 
-RUN apk update && apk upgrade && apk --no-cache add bash git less openssh && pip install detect-secrets==1.2.0
+RUN apk update && apk upgrade && apk --no-cache add bash git less openssh && apk add --update py-pip && pip install detect-secrets==1.2.0
 
 COPY entrypoint.sh /entrypoint.sh
 
